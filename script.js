@@ -79,7 +79,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
    let photoarr = [];
 
  inpFile.addEventListener("change", function() {
-   
+
    const file = this.files[0];
 
    if (file) {
@@ -90,6 +90,15 @@ const previewImage = document.getElementsByClassName("image-preview__image");
 
 
      for (i = 0; i < previewImage.length; i++) {
+       if (photoarr.length === 4) {
+         for (f = 0; f < previewImage.length; f++) {
+
+           previewImage[f].setAttribute('src', "");
+           previewDefaultText[f].style.display = "block";
+           previewImage[f].style.display = "none";
+           photoarr = [];
+         }
+          }
 
     if ( previewDefaultText[i].style.display !== "none") {
 
