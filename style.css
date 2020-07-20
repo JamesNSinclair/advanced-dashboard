@@ -128,7 +128,7 @@ border: 5px black solid;
   align-items: center;
   justify-content: center;
   width: 100%;
-  z-index: 15;
+  z-index: -15;
 
 }
 
