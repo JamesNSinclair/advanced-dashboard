@@ -31,8 +31,10 @@ body {
   margin: auto;
   margin-top: 15px;
 border: 5px black solid;
- height: 250px;
- width: 250px;
+ /* height: 250px;
+ width: 250px; */
+ height: 500px;
+ width: 500px;
 }
 
 /* WEATHER */
@@ -88,6 +90,40 @@ border: 5px black solid;
   display: none;
   width: 100%;
 }
+
+
+
+/* MEMOS */
+
+.dashboardAppMemos {
+  background: white;
+  height: 500px;
+
+  position: -10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.all-tasks {
+ position: absolute;
+}
+
+.todo-list {
+  color: white;
+  border: 5px black solid;
+  background: rgba(255, 0, 0, 0.5);
+  position: relative;
+  height: 100%;
+  display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: -15;
+}
+
 
 @media only screen and (min-width: 320px) {
 

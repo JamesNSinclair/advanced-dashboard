@@ -76,7 +76,8 @@ document.getElementById('searchBtn').addEventListener('click', () => {
  const impFile = document.getElementById("inpFile");
  const previewContainer = document.getElementById("imagePreview");
    const previewDefaultText = document.getElementsByClassName("image-text");
-   let photoarr = [];
+   const LOCAL_STORAGE_PHOTOS_KEY = "photoarr"
+   let photoarr = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PHOTOS_KEY)) || [];
 
  inpFile.addEventListener("change", function() {
 
@@ -107,13 +108,67 @@ const previewImage = document.getElementsByClassName("image-preview__image");
 
      reader.addEventListener("load", function() {
        photoarr.push(this.result);
+       save();
        previewImage[i].setAttribute('src', photoarr[i]);
      });
      reader.readAsDataURL(file);
-     console.log(photoarr);
+
       break;
    }
 
    }
    }
  });
+
+ //MEMO//
+
+const listsContainer = document.querySelector('[data-lists]')
+const newListForm = document.querySelector('[data-new-list-form]')
+const newListInput = document.querySelector('[data-new-list-input]')
+const LOCAL_STORAGE_LIST_KEY = "task.lists"
+
+ let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
+
+newListForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const listName = newListInput.value
+  if(listName == null || listName === "") return
+  const list = createList(listName)
+  newListInput.value = null
+  lists.push(list)
+  saveAndRender()
+});
+
+function createList(name) {
+ return  {id: Date.now().toString(), name: name, tasks: []}
+}
+
+function saveAndRender() {
+  save()
+  render()
+}
+
+
+ function render() {
+   clearElement(listsContainer)
+   lists.forEach(list => {
+     const listElement = document.createElement('li')
+     listElement.dataset.listId= list.id
+     listElement.classList.add("list-name")
+     listElement.innerText = list.name
+     listsContainer.appendChild(listElement)
+   })
+ }
+
+ function clearElement(element) {
+ while(element.firstChild) {
+   element.removeChild(element.firstChild)
+    }
+ }
+
+ render()
+
+ function save() {
+   localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))
+   localStorage.setItem(LOCAL_STORAGE_PHOTOS_KEY, JSON.stringify(photoarr))
+   }

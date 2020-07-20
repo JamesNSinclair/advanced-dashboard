@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
  <link rel="stylesheet" href="style.css">
-  <title>Dashboard</title>
+ <script defer src="script.js"></script>
+    <title>Dashboard</title>
   <meta charset = "UTF-8" />
 
 </head>
@@ -38,7 +39,7 @@
 
 
   <div class="dashboardApp dashbaordAppImage">
-      <input type="file" name="inpFile" id="inpFile">
+<input type="file" name="inpFile" id="inpFile">
     <div id="preview-boxes">
               <div class="image-preview" id=imagePreview>
             <img src="" alt="" class="image-preview__image">
@@ -61,9 +62,83 @@
 
 
 
-  <div class="dashboardApp"></div>
+  <div class="dashboardApp dashboardAppMemos">
+    <!-- <h1 class="title">stuff I need to do</h1> -->
+
+    <div class="all-tasks">
+    <h2 class="task-list-title">My Lists</h2>
+    <ul class="task-list" data-lists>
+      <!-- <li class="active-list">Personal</li>
+      <li class="list-name">Professional</li>
+      <li class="list-name">Misc</li> -->
+    </ul>
+
+    <form action="" data-new-list-form>
+      <input
+        type="text"
+       class="new list"
+       data-new-list-input
+       placeholder="new list name"
+       aria-label="new list name"
+       />
+      <button class="btn list" aria-label="create new list">+</button>
+    </form>
+    </div>
+
+    <div class="todo-list">
+      <div class="todo-header">
+        <h2 class="list-title">Personal</h2>
+        <p class="task-count">3 tasks remaining</p>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks">
+
+          <div class="task">
+          <input type="checkbox" id="task-1">
+          <label for="task-1"><span class="custom-checkbox">
+          </span>record todo list video</label>
+        </div>
+
+        <div class="task">
+        <input type="checkbox" id="task-2">
+        <label for="task-2">
+          <span class="custom-checkbox"></span>
+          record todo list video</label>
+      </div>
+
+      <div class="task">
+      <input type="checkbox" id="task-3">
+      <label for="task-3">
+        <span class="custom-checkbox"></span>
+      record todo list video</label>
+    </div>
+
+        </div>
+
+        <div class="new-tasks-creator">
+
+          <form action="">
+            <input type="text" class="new list" placeholder="new task" aria-label="new task name">
+            <button class="btn task" aria-label="create new task">+</button>
+          </form>
+
+        </div>
+
+        <div class="delete-stuff">
+          <button class="btn delete">Clear Completed Task</button>
+          <button class="btn delete">Delete List</button>
+        </div>
+      </div>
+
+</div>
+
+  </div>
   <div class="dashboardApp"></div>
 
-   <script src="script.js"></script>
+
+
+
+
   </body>
 </html>
