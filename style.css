@@ -231,6 +231,14 @@ border: 5px black solid;
 
 }
 
+
+/*News*/
+
+.fw-block,
+.fw-iframe {
+  height: 100%;
+}
+
 @media only screen and (min-width: 320px) {
 
 }
