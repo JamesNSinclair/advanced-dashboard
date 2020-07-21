@@ -277,7 +277,7 @@ function renderTasks(selectedList) {
    }
 
 
-// CHART
+// CHART //
 let myChart = document.getElementById('myChart').getContext('2d');
 let popChart = new Chart(myChart, {
     type: 'pie',
@@ -291,3 +291,13 @@ let popChart = new Chart(myChart, {
     },
     options:{}
   });
+
+  // SPORTS //
+
+getTable();
+
+async function getTable() {
+  const response = await fetch('sports.csv');
+  const table = await response.text();
+  console.log(table);
+}
