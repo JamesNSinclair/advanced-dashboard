@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="clothing.js"></script>
  <link rel="stylesheet" href="style.css">
  <script defer src="script.js"></script>
     <title>Dashboard</title>
@@ -102,15 +104,19 @@
         </div>
 
         <div class="delete-stuff">
-          <button class="btn delete" data-clear-complete-tasks-button>Clear Completed Task</button>
-          <button class="btn delete" data-delete-list-button>Delete List</button>
+          <button class="btn" data-clear-complete-tasks-button>Clear Completed Task</button>
+          <button class="btn" data-delete-list-button>Delete List</button>
+          <button class="btn" data-close-list-button>Close</button>
         </div>
       </div>
 
 </div>
 
   </div>
-  <div class="dashboardApp"></div>
+  <div class="dashboardApp">
+<canvas id="myChart" width="400" height="400"></canvas>
+
+  </div>
 
 
 <template id="task-template">

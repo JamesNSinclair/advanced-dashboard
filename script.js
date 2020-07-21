@@ -1,5 +1,4 @@
 //WEATHER//
-
 let appId = '6bab5d3bc7059b5bd099a5c9929580d1';
 let units = 'metric';
 let searchMethod;
@@ -126,6 +125,7 @@ const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form]')
 const newListInput = document.querySelector('[data-new-list-input]')
 const deleteListButton = document.querySelector('[data-delete-list-button]')
+const closeListButton = document.querySelector('[data-close-list-button]')
 
 const listDisplayContainer = document.querySelector('[data-list-display-container]')
 const listTitleElement = document.querySelector('[data-list-title]')
@@ -163,6 +163,10 @@ deleteListButton.addEventListener('click', e => {
   selectedListId = null
   listDisplayContainer.style.zIndex = "-15";
   saveAndRender()
+})
+
+closeListButton.addEventListener('click', e => {
+  listDisplayContainer.style.zIndex = "";
 })
 
 clearCompleteTasksButton.addEventListener('click', e => {
@@ -271,3 +275,19 @@ function renderTasks(selectedList) {
    localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId)
    localStorage.setItem(LOCAL_STORAGE_PHOTOSARR_KEY, JSON.stringify(photoarr))
    }
+
+
+// CHART
+let myChart = document.getElementById('myChart').getContext('2d');
+let popChart = new Chart(myChart, {
+    type: 'pie',
+    data: {
+        labels: ['jumpers', 'hoodies', 'sweaters', 'blazers', 'jackets','raincoats'],
+        datasets: [{
+          label: 'Clothes Worn',
+          data: data,
+          backgroundColor: ['blue', 'red', 'green', 'yellow', 'pink', 'black']
+        }]
+    },
+    options:{}
+  });
