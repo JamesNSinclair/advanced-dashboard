@@ -300,10 +300,18 @@ let appearences = [];
 let h = 0;
 
   document.getElementById('sportSearchBtn').addEventListener('click', () => {
+    clearElement(sportsContainer)
+    h = 0;
+    appearences = [];
     const sportSearchTerm = document.getElementById('sportSearchInput').value;
 console.log(sportSearchTerm)
-      searchSports(sportSearchTerm);
+      searchSports(titalize(sportSearchTerm));
   })
+
+  function titalize(entered)
+{
+    return entered.charAt(0).toUpperCase() + entered.slice(1);
+}
 
 
 function searchSports(sportSearchTerm) {
