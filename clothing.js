@@ -1,6 +1,3 @@
-var mobile = document.getElementById('mobile-chart');
-
-
 const clothing = [
         {
             "id": "0001",

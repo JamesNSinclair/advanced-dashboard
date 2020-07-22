@@ -294,10 +294,52 @@ let popChart = new Chart(myChart, {
 
   // SPORTS //
 
-getTable();
 
-async function getTable() {
-  const response = await fetch('sports.csv');
-  const table = await response.text();
-  console.log(table);
-}
+const sportsContainer = document.querySelector('[sports-list]')
+let appearences = [];
+let h = 0;
+
+  document.getElementById('sportSearchBtn').addEventListener('click', () => {
+    const sportSearchTerm = document.getElementById('sportSearchInput').value;
+console.log(sportSearchTerm)
+      searchSports(sportSearchTerm);
+  })
+
+
+function searchSports(sportSearchTerm) {
+    for (i=0; i < sports.length; i+=1) {
+      const teamName = sportSearchTerm;
+      if (sports[i].HomeTeam.includes(teamName) && sports[i].FTR === 'H' ) {
+        appearences.push(sports[i]);
+       let opponent = sports[i].AwayTeam;
+       recentWins(teamName, appearences, opponent)
+      }   else if (sports[i].AwayTeam.includes(teamName) && sports[i].FTR === 'A' ) {
+          appearences.push(sports[i]);
+           let opponent = sports[i].HomeTeam;
+           recentWins(teamName, appearences, opponent)
+        };
+ if (h === 4) {
+   break
+ }
+            }
+
+      };
+
+function recentWins(teamName, appearences, opponent) {
+     const winners = String(teamName + ' won against ' + opponent);
+     console.log(winners)
+   renderWinners(winners)
+    }
+
+
+    function renderWinners(winners) {
+        let list = "";
+        const listElement = document.createElement('li')
+        listElement.dataset.listId= list.id
+        listElement.classList.add("list-name")
+        listElement.innerText = winners
+        sportsContainer.appendChild(listElement)
+        h += 1
+        console.log(h)
+
+    }
