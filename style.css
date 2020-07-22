@@ -3,7 +3,12 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: 'open sans',sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.uw-opensans * {
+    font-family: 'open sans',sans-serif;
+    font-family: 'Open Sans Condensed';
 }
 
 html {
