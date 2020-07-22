@@ -278,7 +278,8 @@ function renderTasks(selectedList) {
 
 
 // CHART //
-let myChart = document.getElementById('myChart').getContext('2d');
+let myChart = document.getElementById('myChart')
+myChart.height = 260;
 let popChart = new Chart(myChart, {
     type: 'pie',
     data: {
@@ -286,7 +287,7 @@ let popChart = new Chart(myChart, {
         datasets: [{
           label: 'Clothes Worn',
           data: data,
-          backgroundColor: ['blue', 'red', 'green', 'yellow', 'pink', 'black']
+          backgroundColor: ['#29066C', '#7D39C0', '#B04BCF', '#DC4BB4', '#EB548B', '#E97369']
         }]
     },
     options:{}
@@ -300,12 +301,14 @@ let appearences = [];
 let h = 0;
 
   document.getElementById('sportSearchBtn').addEventListener('click', () => {
-    clearElement(sportsContainer)
+      clearElement(sportsContainer)
     h = 0;
     appearences = [];
     const sportSearchTerm = document.getElementById('sportSearchInput').value;
+    if (sportSearchTerm !== "" ) {
 console.log(sportSearchTerm)
       searchSports(titalize(sportSearchTerm));
+    }
   })
 
   function titalize(entered)
@@ -344,7 +347,7 @@ function recentWins(teamName, appearences, opponent) {
         let list = "";
         const listElement = document.createElement('li')
         listElement.dataset.listId= list.id
-        listElement.classList.add("list-name")
+        listElement.classList.add("victories")
         listElement.innerText = winners
         sportsContainer.appendChild(listElement)
         h += 1

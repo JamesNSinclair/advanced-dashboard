@@ -18,7 +18,9 @@
 
 
   <div class="dashboardApp dashboardAppWeather">
-      <div id="searchContainer">
+
+            <div id="searchContainer" class="searchContainer">
+                <span class="section-headings">Weather:</span>
         <input type="text" placeholder="City Name or Zipcode" id="searchInput">
         <button class="searchControl" id="searchBtn">search</button>
       </div>
@@ -36,34 +38,34 @@
   </div>
 </div>
 </div>
-  <div class="dashboardApp">
-  <iframe src="https://www.feedgrabbr.com/inframe/?widgetid=1366709ed6b2891bfdb653290" allowtransparency="true" style="border:0;background-color: transparent;width:400px;height:95%; overflow: hidden;" scrolling="no"></iframe></div>
+  <div class="dashboardApp dashboardAppNews">
+  <iframe src="https://www.feedgrabbr.com/inframe/?widgetid=1366709ed6b2891bfdb653290" allowtransparency="true" style="border:0;background-color: transparent;width:400px;height:95%; overflow: hidden; border-top-left-radius: 15px; border-top-right-radius: 15px" scrolling="no"></iframe></div>
 
 
 
 
-  <div class="dashboardApp">
-
-   <header><h2> Sports </h2>
-   <header>
-     <div id="searchContainer">
+  <div class="dashboardApp dashboardAppSports">
+     <div class="searchContainer">
+         <span class="section-headings">Sports:</span>
+         <span>
        <input type="text" placeholder="Name A Team" id="sportSearchInput">
        <button class="searchControl" id="sportSearchBtn">search</button>
+     </span>
      </div>
- <div>
- <h2>Team Name<h2>
- <div id="wins">
+
+ <div class="results">
    <ul class="sports-list" sports-list>
        </ul>
   </div>
 </div>
 
-</div>
-
 
 
   <div class="dashboardApp dashbaordAppImage">
+     <div class="searchContainer">
+    <span class="section-headings">Photos:</span>
 <input type="file" name="inpFile" id="inpFile">
+</div>
     <div id="preview-boxes">
               <div class="image-preview" id=imagePreview>
             <img src="" alt="" class="image-preview__image">
@@ -87,8 +89,9 @@
 
 
   <div class="dashboardApp dashboardAppMemos">
-    <!-- <h1 class="title">stuff I need to do</h1> -->
-
+    <div class="searchContainer">
+   <span class="section-headings" style="margin-right: auto;">Memos:</span>
+</div>
     <div class="all-tasks">
     <h2 class="task-list-title">My Lists</h2>
     <ul class="task-list" data-lists>
@@ -135,8 +138,11 @@
 </div>
 
   </div>
-  <div class="dashboardApp">
-<canvas id="myChart" width="400" height="400"></canvas>
+  <div class="dashboardApp dashboardAppGraph" style="flex-direction: column;">
+    <div class="searchContainer">
+   <span class="section-headings" style="margin-right: auto;">Clothing:</span>
+</div>
+<canvas id="myChart" width="300" height="300" style="margin-top: 15px;"></canvas>
 
   </div>
 

@@ -5024,12 +5024,5 @@ function getOccurrence(array, value) {
     return array.filter((v) => (v === value)).length;
 }
 
-// console.log(clothes);
-// (let i=0; i<clothing.length; i+=1)
-//  clothes[i].filter(function(sweaters) {
-//     return sweaters = "hoodie";
-//       data.push(sweaters);
-//   });
-
 
 clothingItems(clothing)
