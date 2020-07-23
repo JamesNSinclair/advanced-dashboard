@@ -75,7 +75,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
  const impFile = document.getElementById("inpFile");
  const previewContainer = document.getElementById("imagePreview");
    const previewDefaultText = document.getElementsByClassName("image-text");
-   const LOCAL_STORAGE_PHOTOSARR_KEY = "photoarr"
+   const LOCAL_STORAGE_PHOTOSARR_KEY = "photoarr";
    let photoarr = JSON.parse(localStorage.getItem(LOCAL_STORAGE_PHOTOSARR_KEY)) || [];
 
  inpFile.addEventListener("change", function() {
@@ -90,7 +90,7 @@ const previewImage = document.getElementsByClassName("image-preview__image");
 
 
      for (i = 0; i < previewImage.length; i++) {
-       if (photoarr.length === 4) {
+       if (photoarr.length >= 4) {
          for (f = 0; f < previewImage.length; f++) {
 
            previewImage[f].setAttribute('src', "");
@@ -107,8 +107,8 @@ const previewImage = document.getElementsByClassName("image-preview__image");
 
      reader.addEventListener("load", function() {
        photoarr.push(this.result);
-       save();
        previewImage[i].setAttribute('src', photoarr[i]);
+       save();
      });
      reader.readAsDataURL(file);
 
@@ -118,6 +118,32 @@ const previewImage = document.getElementsByClassName("image-preview__image");
    }
    }
  });
+
+loadImages()
+
+ function loadImages() {
+const previewImage = document.getElementsByClassName("image-preview__image");
+
+   console.log(photoarr)
+        if (photoarr.length >= 5) {
+       for (f = 0; f < previewImage.length; f++) {
+         previewImage[f].setAttribute('src', "");
+         previewDefaultText[f].style.display = "block";
+         previewImage[f].style.display = "none";
+         photoarr = [];
+               }
+             }
+
+    for (i = 0; i < photoarr.length; i++) {
+      if ( previewDefaultText[i].style.display !== "none") {
+
+       previewDefaultText[i].style.display = "none";
+       previewImage[i].style.display = "block";
+       previewImage[i].setAttribute('src', photoarr[i]);
+}
+    }
+ }
+
 
  //MEMO//
 
