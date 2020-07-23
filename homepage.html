@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+ <script defer src="homescript.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="style.css">
+
     <title>Dashboard</title>
   <meta charset = "UTF-8" />
 
@@ -16,14 +17,23 @@
     <div class="form-box">
       <div class="button-box">
         <div id="homebtn"></div>
-        <button type="button" class="toggle-btn">Login</button>
-        <button type="button" class="toggle-btn">Register</button>
+        <button type="button" class="toggle-btn" onclick="login()">Login</button>
+        <button type="button" class="toggle-btn" onclick="register()">Register</button>
     </div>
-    <form class="input-group">
-      <input type="text" class="input-field" placeholider="User Id" required>
-      <input type="text" class="input-field" placeholider="Enter Password" required>
-      <input type="checkbox" class="check-box"<span>Remember Password</span>
-      <button type="submit" class="login"
+    <h2 class="opener">Therapy Box Dashboard</h2>
+    <form class="input-group" id="login">
+      <input type="text" class="input-field" placeholder=" User Id" required>
+      <input type="text" class="input-field" placeholder=" Enter Password" required>
+      <input type="checkbox" class="check-box"><span>Remember Password</span>
+      <button  id="enterLogin" type="submit" class="submit-btn">Login</button>
+    </form>
+    <form class="input-group"  id="register">
+      <input type="text" class="input-field" placeholder=" User Id" required>
+      <input type="text" class="input-field" placeholder=" Email Id" required>
+      <input type="text" class="input-field" placeholder=" Enter Password" required>
+      <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+      <button id="enterRegister" type="submit" class="submit-btn">Register</button>
+    </form>
   </div>
   </body>
 </html>
