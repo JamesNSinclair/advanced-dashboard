@@ -182,6 +182,7 @@ listsContainer.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() === 'li') {
         selectedListId = e.target.dataset.listId;
         saveAndRender()
+        listDisplayContainer.style.zIndex = "15";
     }
 })
 
@@ -192,6 +193,7 @@ tasksContainer.addEventListener('click', e => {
         selectedTask.complete = e.target.checked
         save()
         renderTaskCount(selectedList)
+
     }
 })
 
@@ -220,6 +222,7 @@ newListForm.addEventListener('submit', e => {
     newListInput.value = null
     lists.push(list)
     saveAndRender()
+
 });
 
 newTaskForm.addEventListener('submit', e => {
@@ -267,7 +270,7 @@ function render() {
         renderTaskCount(selectedList)
         clearElement(tasksContainer)
         renderTasks(selectedList)
-        listDisplayContainer.style.zIndex = "15";
+
 
     }
 }
