@@ -375,8 +375,12 @@ background: white;
  flex-direction: column;
  }
 
+ .victories {
+   margin-bottom: 15px;
+ }
+
  .sports-list {
-   margin-top: 45px;
+   margin-top: 50px;
  }
  .dashboardAppSports {
    background-color: white;

@@ -1,170 +1,35 @@
 <!DOCTYPE HTML>
 <html lang = "en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-  <script src="scripts/clothing.js"></script>
-  <script src="scripts/sports.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="style.css">
- <script defer src="scripts/script.js"></script>
-    <title>Dashboard</title>
-  <meta charset = "UTF-8" />
-
-</head>
-  <body>
-  <div id="dashboard">
-
-
-  <div class="dashboardApp dashboardAppWeather">
-
-            <div id="searchContainer" class="searchContainer">
-                <span class="section-headings">Weather:</span>
-                <span>
-        <input type="text" placeholder="Enter City Name" id="searchInput">
-        <button class="searchControl" id="searchBtn">search</button>
-      </span>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script defer src="scripts/homescript.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <title>Dashboard</title>
+   </head>
+   <body class="homepage">
+      <div class="form-box">
+         <div class="button-box">
+            <div id="homebtn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">Login</button>
+            <button type="button" class="toggle-btn" onclick="register()">Register</button>
+         </div>
+         <h2 class="opener">Therapy Box Dashboard</h2>
+         <form class="input-group" id="login">
+            <input type="text" class="input-field" placeholder=" User Id" required>
+            <input type="password" class="input-field" placeholder=" Enter Password" required>
+            <input type="checkbox" class="check-box"><span>Remember Password</span>
+            <button  id="enterLogin" type="submit" class="submit-btn" onclick="window.location.href='./dashboard.html'">Login</button>
+         </form>
+         <form class="input-group"  id="register">
+            <input type="text" id="userSign" class="input-field" placeholder=" User Id" required>
+            <input type="text" id="emailSign" class="input-field" placeholder=" Email Id" required>
+            <input type="password" id="passwordSign" class="input-field" placeholder=" Enter Password" required>
+            <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+            <button id="enterRegister" type="submit" class="submit-btn">Register</button>
+         </form>
       </div>
-
-      <div id="weatherContainer">
-        <div id="weatherDescritpion">
-          <h1 id="cityHeader"></h1>
-          <div id="weatherMain">
-            <div id="temperature"></div>
-            <div id="weatherDescriptionHeader"></div>
-            <div><img id="documentIconImg"></div>
-          </div>
-          <div id="windSpeed" class="bottomDetails"></div>
-          <div id="humidity" class="bottomDetails"></div>
-  </div>
-</div>
-</div>
-  <div class="dashboardApp dashboardAppNews">
-  <iframe src="https://www.feedgrabbr.com/inframe/?widgetid=1366709ed6b2891bfdb653290" allowtransparency="true" style="border:0;background-color: transparent;width:400px;height:95%; overflow: hidden; border-top-left-radius: 15px; border-top-right-radius: 15px;  font-family: 'Open Sans Condensed', sans-serif;" scrolling="no"></iframe></div>
-
-
-
-
-  <div class="dashboardApp dashboardAppSports" id="dashboardAppSports">
-     <div class="searchContainer">
-         <span class="section-headings">Sports:</span>
-         <span>
-       <input type="text" placeholder="Name A Team" id="sportSearchInput">
-       <button class="searchControl" id="sportSearchBtn">search</button>
-     </span>
-     </div>
-
- <div class="results">
-   <ul class="sports-list" sports-list>
-       </ul>
-  </div>
-</div>
-
-
-
-  <div class="dashboardApp dashbaordAppImage">
-     <div class="searchContainer">
-    <span class="section-headings">Photos:</span>
-
-    <input type="button" style="width: 100px;" id="loadFileXml" value="Upload Image" onclick="document.getElementById('inpFile').click();" />
-<input type="file" name="inpFile"  style="display:none;" id="inpFile">
-</div>
-    <div id="preview-boxes">
-              <div class="image-preview" id=imagePreview>
-            <img src="" alt="" class="image-preview__image">
-            <span class="image-text">No Image Uploaded</span>
-        </div>
-        <div class="image-preview" id=imagePreview>
-          <img src="" alt="" class="image-preview__image">
-          <span class="image-text">No Image Uploaded</span>
-      </div>
-      <div class="image-preview" id=imagePreview>
-        <img src="" alt="" class="image-preview__image">
-        <span class="image-text">No Image Uploaded</span>
-    </div>
-    <div class="image-preview" id=imagePreview>
-      <img src="" alt="" class="image-preview__image">
-      <span class="image-text">No Image Uploaded</span>
-  </div>
-</div>
-  </div>
-
-
-
-  <div class="dashboardApp dashboardAppMemos">
-    <div class="searchContainer">
-   <span class="section-headings"  style="margin-right: auto;">Memos:</span>
-   <span class="section-headings">[Click On Lists To Create Entry]</span>
-</div>
-    <div class="all-tasks">
-      <div class="lower-tasks">
-    <h2 class="task-list-title">My Lists</h2>
-    <ul class="task-list" data-lists>
-        </ul>
-
-    <form action="" data-new-list-form>
-      <input
-        type="text"
-       class="new list"
-       data-new-list-input
-       placeholder="new list name"
-       aria-label="new list name"
-       />
-      <button class="btn create" aria-label="create new list">+</button>
-    </form>
-  </div>
-    </div>
-
-    <div class="todo-list" data-list-display-container>
-      <div class="todo-header">
-        <h2 class="list-title" data-list-title>Personal</h2>
-        <p class="task-count" data-list-count>3 tasks remaining</p>
-      </div>
-
-      <div class="todo-body">
-        <div class="tasks" data-tasks>
-        </div>
-
-        <div class="new-tasks-creator">
-
-          <form action="" data-new-task-form>
-            <input type="text" class="new task" placeholder="new task" aria-label="new task name" data-new-task-input>
-            <button class="btn create" aria-label="create new task">+</button>
-          </form>
-
-        </div>
-
-        <div class="delete-stuff">
-          <button class="btn" data-clear-complete-tasks-button>Clear Completed Task</button>
-          <button class="btn" data-delete-list-button>Delete List</button>
-          <button class="btn" data-close-list-button>Close</button>
-        </div>
-      </div>
-
-</div>
-
-  </div>
-  <div class="dashboardApp dashboardAppGraph" style="flex-direction: column;">
-    <div class="searchContainer">
-   <span class="section-headings" style="margin-right: auto;">Clothing:</span>
-</div>
-<canvas id="myChart" width="300" height="300" style="margin-top: 15px;"></canvas>
-
-  </div>
-
-
-<template id="task-template">
-  <div class="task">
-  <input type="checkbox">
-  <label>
-  <span class="custom-checkbox">
-  </span></label>
-</div>
-</template>
-
-
-
-  </body>
+   </body>
 </html>
