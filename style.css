@@ -64,7 +64,7 @@ button {
   width: 220px;
   margin: 35px auto;
   position: relative;
-  box-shadow: 0 0 20px 9px #ff61241f;
+  box-shadow: 0 0 10px 1px #DC4BB4;
   border-radius: 30px;
 }
 
@@ -82,11 +82,14 @@ button {
   position: absolute;
   width: 110px;
   height: 100%;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background: linear-gradient(to right, #B04BCF, #E97369);
   border-radius: 30px;
   transition: .5s;
 }
 
+#log {
+  color: white;
+}
 .input-group {
   top: 180px;
   position: absolute;
@@ -104,11 +107,12 @@ button {
 }
 
 .submit-btn {
+    color: white;
   width: 85%;
   padding: 10px 30px;
   display: block;
   margin: 30px auto;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background: linear-gradient(to right, #B04BCF, #E97369);
   outline: none;
   border-radius: 30px;
 }
