@@ -192,7 +192,7 @@ deleteListButton.addEventListener('click', e => {
 })
 
 closeListButton.addEventListener('click', e => {
-  listDisplayContainer.style.zIndex = "";
+  listDisplayContainer.style.zIndex = "-15";
 })
 
 clearCompleteTasksButton.addEventListener('click', e => {
@@ -245,7 +245,7 @@ const selectedList = lists.find(list => list.id === selectedListId)
      listDisplayContainer.style.zIndex = "";
  }
  else {
-   listDisplayContainer.style.zIndex = "15";
+   listDisplayContainer.style.zIndex = "";
 
    listTitleElement.innerText = selectedList.name;
    renderTaskCount(selectedList)
@@ -282,7 +282,7 @@ function renderTasks(selectedList) {
      listElement.classList.add("list-name")
      listElement.innerText = list.name
      if(list.id === selectedListId) {
-     listElement.classList.add('active-list')
+
    }
      listsContainer.appendChild(listElement)
    })
@@ -323,6 +323,7 @@ let popChart = new Chart(myChart, {
 
 
 const sportsContainer = document.querySelector('[sports-list]')
+const dashboardSports = document.getElementById('dashboardAppSports')
 let appearences = [];
 let h = 0;
 
@@ -355,7 +356,7 @@ function searchSports(sportSearchTerm) {
            let opponent = sports[i].HomeTeam;
            recentWins(teamName, appearences, opponent)
         };
- if (h === 4) {
+ if (h === 10) {
    break
  }
             }
@@ -370,6 +371,7 @@ function recentWins(teamName, appearences, opponent) {
 
 
     function renderWinners(winners) {
+        dashboardSports.style.backgroundImage = "url('images/trophy.png')";
         let list = "";
         const listElement = document.createElement('li')
         listElement.dataset.listId= list.id

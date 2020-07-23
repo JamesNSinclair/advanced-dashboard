@@ -1,8 +1,8 @@
 const log = document.getElementById('login')
 const reg = document.getElementById('register')
 const btn = document.getElementById('homebtn')
-const submit = document.getElementById('enterlogin')
-const register = document.getElementById('enterRegister')
+
+
 
 function register() {
   log.style.left="-400px";

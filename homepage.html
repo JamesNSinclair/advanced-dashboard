@@ -23,14 +23,14 @@
     <h2 class="opener">Therapy Box Dashboard</h2>
     <form class="input-group" id="login">
       <input type="text" class="input-field" placeholder=" User Id" required>
-      <input type="text" class="input-field" placeholder=" Enter Password" required>
+      <input type="password" class="input-field" placeholder=" Enter Password" required>
       <input type="checkbox" class="check-box"><span>Remember Password</span>
-      <button  id="enterLogin" type="submit" class="submit-btn">Login</button>
+      <button  id="enterLogin" type="submit" class="submit-btn" onclick="window.location.href='./index.html'">Login</button>
     </form>
     <form class="input-group"  id="register">
-      <input type="text" class="input-field" placeholder=" User Id" required>
-      <input type="text" class="input-field" placeholder=" Email Id" required>
-      <input type="text" class="input-field" placeholder=" Enter Password" required>
+      <input type="text" id="userSign" class="input-field" placeholder=" User Id" required>
+      <input type="text" id="emailSign" class="input-field" placeholder=" Email Id" required>
+      <input type="password" id="passwordSign" class="input-field" placeholder=" Enter Password" required>
       <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
       <button id="enterRegister" type="submit" class="submit-btn">Register</button>
     </form>
