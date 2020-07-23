@@ -388,9 +388,10 @@ background: white;
   color: black;
 align-items: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+
         background-color: #e8e8e8;
-        padding: 10px 10px;
+        padding: 10px 30px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
 

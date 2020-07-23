@@ -305,7 +305,7 @@ function renderTasks(selectedList) {
 
 // CHART //
 let myChart = document.getElementById('myChart')
-myChart.height = 260;
+myChart.height = 240;
 let popChart = new Chart(myChart, {
     type: 'pie',
     data: {
