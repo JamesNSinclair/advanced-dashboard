@@ -186,13 +186,13 @@ tasksContainer.addEventListener('click', e => {
 
 deleteListButton.addEventListener('click', e => {
   lists = lists.filter(list => list.id !== selectedListId)
-  selectedListId = null
-  listDisplayContainer.style.zIndex = "-15";
+  selectedListId = null;
+  listDisplayContainer.style.zIndex = "";
   saveAndRender()
 })
 
 closeListButton.addEventListener('click', e => {
-  listDisplayContainer.style.zIndex = "-15";
+  listDisplayContainer.style.zIndex = "";
 })
 
 clearCompleteTasksButton.addEventListener('click', e => {
@@ -245,12 +245,11 @@ const selectedList = lists.find(list => list.id === selectedListId)
      listDisplayContainer.style.zIndex = "";
  }
  else {
-   listDisplayContainer.style.zIndex = "";
-
    listTitleElement.innerText = selectedList.name;
    renderTaskCount(selectedList)
    clearElement(tasksContainer)
    renderTasks(selectedList)
+      listDisplayContainer.style.zIndex = "15";
 
  }
  }
@@ -288,13 +287,14 @@ function renderTasks(selectedList) {
    })
  }
 
+
  function clearElement(element) {
  while(element.firstChild) {
    element.removeChild(element.firstChild)
     }
  }
 
- render()
+ renderLists()
 
  function save() {
    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))

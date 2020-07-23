@@ -22,8 +22,10 @@
 
             <div id="searchContainer" class="searchContainer">
                 <span class="section-headings">Weather:</span>
+                <span>
         <input type="text" placeholder="Enter City Name" id="searchInput">
         <button class="searchControl" id="searchBtn">search</button>
+      </span>
       </div>
 
       <div id="weatherContainer">
@@ -92,9 +94,11 @@
 
   <div class="dashboardApp dashboardAppMemos">
     <div class="searchContainer">
-   <span class="section-headings" style="margin-right: auto;">Memos:</span>
+   <span class="section-headings"  style="margin-right: auto;">Memos:</span>
+   <span class="section-headings">[Click On Lists To Create Entry]</span>
 </div>
     <div class="all-tasks">
+      <div class="lower-tasks">
     <h2 class="task-list-title">My Lists</h2>
     <ul class="task-list" data-lists>
         </ul>
@@ -109,6 +113,7 @@
        />
       <button class="btn create" aria-label="create new list">+</button>
     </form>
+  </div>
     </div>
 
     <div class="todo-list" data-list-display-container>

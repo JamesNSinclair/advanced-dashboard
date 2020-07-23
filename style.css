@@ -213,6 +213,17 @@ color: white;
 
 /* MEMOS */
 
+.lower-tasks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 80%;
+    margin-bottom: auto;
+  }
+
 .dashboardAppMemos {
 background: white;
   height: 400px;
@@ -240,7 +251,7 @@ background: white;
   justify-content: center;
   width: 100%;
   height: 80%;
-  z-index: 15;
+  z-index: -15;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-bottom: auto;
@@ -267,6 +278,7 @@ background: white;
 .task-list {
   line-height: 1.8;
   list-style: circle;
+  padding-left: 0;
   }
 
   .active-list {
